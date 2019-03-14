@@ -10,14 +10,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.os.Handler;
 
-import java.sql.Time;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import android.widget.ArrayAdapter;
 import android.os.SystemClock;
 
-public class OneFragment extends Fragment{
+public class StopwatchFragment extends Fragment{
 
     TextView textView ;
     ListView listView;
@@ -30,7 +29,7 @@ public class OneFragment extends Fragment{
     int Seconds, Minutes, MilliSeconds ;
     int LapNumber = 1;
 
-    public OneFragment() {
+    public StopwatchFragment() {
         // Required empty public constructor
     }
 
@@ -44,7 +43,7 @@ public class OneFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_stopwatch, container, false);
         textView = (TextView) view.findViewById(R.id.textView);
         start = (Button) view.findViewById(R.id.button);
         pause = (Button) view.findViewById(R.id.button2);

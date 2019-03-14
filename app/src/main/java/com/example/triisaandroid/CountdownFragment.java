@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.concurrent.TimeUnit;
 
-public class TwoFragment extends Fragment implements View.OnClickListener{
+public class CountdownFragment extends Fragment implements View.OnClickListener{
 
     private long timeCountInMilliSeconds = 1 * 60000;
 
@@ -31,7 +31,7 @@ public class TwoFragment extends Fragment implements View.OnClickListener{
     private ImageView imageViewStartStop;
     private CountDownTimer countDownTimer;
 
-    public TwoFragment() {
+    public CountdownFragment() {
         // Required empty public constructor
     }
 
@@ -43,7 +43,7 @@ public class TwoFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_countdown, container, false);
         initViews(view);
         // method call to initialize the listeners
         initListeners();
