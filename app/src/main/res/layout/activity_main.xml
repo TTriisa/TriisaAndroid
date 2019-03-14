@@ -39,6 +39,7 @@
         android:id="@+id/button2"
         android:layout_alignBaseline="@+id/button"
         android:layout_alignBottom="@+id/button"
+        android:enabled="false"
         android:layout_centerHorizontal="true" />
 
     <Button

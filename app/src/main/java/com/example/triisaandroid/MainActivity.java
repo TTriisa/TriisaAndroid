@@ -23,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     Button start, pause, reset, lap ;
 
-    long MillisecondTime, StartTime, TimeBuff, UpdateTime = 0L ;
+    long MillisecondTime, StartTime, TimeBuff, TimeLaps, UpdateTime = 0L ;
 
     Handler handler;
 
-    int Seconds, Minutes, MilliSeconds ;
+    int Seconds, Minutes, MilliSeconds;
+
+    int LapNumber = 1;
 
     ListView listView ;
 
@@ -68,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 handler.postDelayed(runnable, 0);
 
                 reset.setEnabled(false);
+                pause.setEnabled(true);
+                start.setEnabled(false);
             }
         });
 
@@ -80,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                 handler.removeCallbacks(runnable);
 
                 reset.setEnabled(true);
+                pause.setEnabled(false);
+                start.setEnabled(true);
             }
         });
 
@@ -90,10 +96,12 @@ public class MainActivity extends AppCompatActivity {
                 MillisecondTime = 0L ;
                 StartTime = 0L ;
                 TimeBuff = 0L ;
+                TimeLaps = 0L ;
                 UpdateTime = 0L ;
                 Seconds = 0 ;
                 Minutes = 0 ;
                 MilliSeconds = 0 ;
+                LapNumber = 1;
 
                 textView.setText("00:00:00");
 
@@ -107,7 +115,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                ListElementsArrayList.add(textView.getText().toString());
+                UpdateTime = UpdateTime - TimeLaps;
+
+                Seconds = (int) ((UpdateTime) / 1000) ;
+
+                Minutes = Seconds / 60;
+
+                Seconds = Seconds % 60;
+
+                MilliSeconds = (int) (UpdateTime % 1000);
+
+                ListElementsArrayList.add("Lap "+ LapNumber + "  " + Minutes + ":"
+                        + String.format("%02d", Seconds) + ":"
+                        + String.format("%03d", MilliSeconds));
+
+                TimeLaps = UpdateTime + TimeLaps;
+                LapNumber += 1;
 
                 adapter.notifyDataSetChanged();
 
