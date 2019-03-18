@@ -40,3 +40,6 @@ Muutatused rakenduse terviklikumaks muutmise nimel.
 	Stopperi loogikas oli vaja parandusi teha. Mure kohtadeks olid nuppude mitme kordne vajutamine, mis lõhkus stopperi tööd, ning "Save lap" nupu funktsionaalsus, mis salvestas hetkese aja, mitte hetkese ringi aja.
 	Veel sai stopperi ja taimer funktsionaalsus tõstetud fragmentide sisse, tahtes muudatusi mõnes koodi jupis, näiteks contexti pärimisel, kuna fragmendi sees käib see erinevalt activitist.
 	Taimeri juures sai muudetud värvi valikuid, et need läheksid kokku ka eelnevalt valminud kujundustega.
+
+![alt text](https://github.com/TTriisa/TriisaAndroid/blob/master/screenshot1.png)
+![alt text](https://github.com/TTriisa/TriisaAndroid/blob/master/screenshot2.png)
